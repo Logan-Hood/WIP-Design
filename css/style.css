@@ -470,7 +470,6 @@ input[type="email"], input[type="password"] {
 }
 
 .toggle-options {
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -486,7 +485,6 @@ input[type="email"], input[type="password"] {
 
 .toggle-btn {
   width: 40px;
-  padding: 5px;
   border-radius: 20px;
   font-size: 13px;
   font-weight: bold;
@@ -526,7 +524,7 @@ input[type="email"], input[type="password"] {
 .toggle-switch {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .switch {
@@ -557,7 +555,7 @@ input[type="email"], input[type="password"] {
   content: "";
   height: 32px;
   width: 32px;
-  left: 4px;
+  left: 8px;
   bottom: 4px;
   background-color: #EDB32B;
   border-radius: 50%;
