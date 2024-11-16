@@ -280,6 +280,7 @@ input[type="email"], input[type="password"] {
 .saved-projects {
   padding: 20px;
   overflow: scroll;
+  margin-bottom: 24px;
 }
 
 .project {
