@@ -8,27 +8,22 @@ function login() {
 
 
 $(document).ready(function() {
-    // Open the hamburger menu overlay
-    $(".hamburger-menu").on("click", function() {
-      $(".menu-overlay").fadeIn();
-    });
-  
-    // Open the profile menu overlay
-    $(".profile-icon").on("click", function() {
-      $(".profile-overlay").fadeIn();
-    });
-  
-    // Close any overlay
-    $(".close-overlay").on("click", function() {
-      $(".menu-overlay, .profile-overlay").fadeOut();
-    });
-  
-    // Redirect to dashboard (dash.html) after login
-    $("form").on("submit", function(e) {
-      e.preventDefault();
-      window.location.href = "dash.html";
-    });
+  // Open the hamburger menu overlay
+  $(".hamburger-menu").on("click", function() {
+      $(".menu-overlay").addClass("active");
   });
+
+  // Close the overlay
+  $(".close-overlay").on("click", function() {
+      $(".menu-overlay").removeClass("active");
+  });
+
+  // Close the overlay when a link inside the overlay is clicked
+  $(".menu-overlay a").on("click", function() {
+      $(".menu-overlay").removeClass("active");
+  });
+});
+
   
 
 // Close overlay when the close button is clicked

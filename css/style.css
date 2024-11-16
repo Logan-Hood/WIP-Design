@@ -125,20 +125,38 @@ input[type="email"], input[type="password"] {
     background-color: #F5F5F5;
   }
   
-  /* Overlays */
-  .profile-overlay {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #F5F5F5;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    padding: 20px;
-    overflow-y: auto;
-    font-size: 24px;
-  }
+  /* General overlay styles */
+.menu-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0; /* Anchors to the left for a sliding effect */
+  width: 50%; /* Half of the page width */
+  height: 100%; /* Full height */
+  background-color: white; /* Matches your screenshot */
+  z-index: 999; /* Above other content */
+  color: black; /* Text color */
+  padding: 20px;
+  box-sizing: border-box;
+  transform: translateX(-100%); /* Initially hidden off-screen */
+  transition: transform 0.3s ease; /* Smooth slide-in transition */
+}
+
+/* Active state for sliding in */
+.menu-overlay.active {
+  display: block;
+  transform: translateX(0); /* Slide in to its position */
+}
+
+/* Close button */
+.close-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
   
 .menu-overlay {
   display: none;
