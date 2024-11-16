@@ -1,0 +1,408 @@
+/* Body dimensions for all pages */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Proxima Nova', sans-serif;
+    background-color: #F5F5F5;
+    width: 440px;
+    height: 956px;
+    overflow: hidden;
+}
+
+/* Style for the login page */
+.background {
+    background-image: url('../images/background1.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 360px;
+    color: #FFFFFF;
+}
+
+.logo1 {
+    width: 53px;
+    height: 30px;
+    margin-left: 8px;
+}
+
+.logo2 {
+  width: 175px;
+  height: 99px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+    color: #FFFFFF;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+::placeholder {
+    color: #707070;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #EDB32B;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signup-link {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+
+
+
+/* General Styles */
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Top Navbar */
+  .top-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    border-bottom: #EDB32B solid 3px;
+    padding: 10px;
+  }
+  
+  .hamburger-menu, .profile-icon, .logo {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .search-bar {
+    flex-grow: 1;
+    margin: 0 10px;
+    padding: 5px;
+    border: 1px solid #979797;
+    border-radius: 5px;
+    font-size: 13px;
+    background-color: #F5F5F5;
+  }
+  
+  /* Overlays */
+  .menu-overlay, .profile-overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #F5F5F5;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .close-overlay {
+    font-size: 18px;
+    background: none;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .menu-overlay ul, .profile-overlay ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu-overlay li, .profile-overlay li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .menu-overlay img, .profile-overlay img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-header img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+  }
+  
+  .profile-header p {
+    margin: 0;
+    font-size: 13px;
+  }
+  
+  .badge {
+    background-color: #EDB32B;
+    color: #000000;
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  
+  /* Bottom Navbar */
+  .bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    width: 440px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #EDB32B;
+    padding: 10px 0;
+  }
+  
+  .bottom-navbar a {
+    text-align: center;
+  }
+  
+  .bottom-navbar img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .disabled-link {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+ 
+
+
+
+
+
+  /* Dashboard Section */
+.dashboard {
+  text-align: center;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-bottom: 3px solid #EDB32B;
+}
+
+.dashboard h1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.dashboard p {
+  font-size: 13px;
+  color: #707070;
+  margin-bottom: 20px;
+}
+
+.dashboard-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  justify-items: center;
+}
+
+.action {
+  text-align: center;
+}
+
+.action img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+.action span {
+  display: block;
+  font-size: 12px;
+  color: #000000;
+}
+
+.badge {
+  background-color: #EDB32B;
+  color: #000000;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 5px;
+  margin-top: 2px;
+}
+
+/* Saved Projects Section */
+.saved-projects {
+  padding: 20px;
+}
+
+.project {
+  display: flex;
+  flex-direction: row;
+  background-color: #FFFFFF;
+  border: 1px solid #979797;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.project-image {
+  width: 120px;
+  height: auto;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 10px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-info h2 {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.project-info p {
+  font-size: 12px;
+  color: #707070;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.project-stage {
+  width: 30px;
+  height: 30px;
+}
+
+.comment-button {
+  align-self: flex-start;
+  background-color: #EDB32B;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.next-button {
+  align-self: flex-start;
+  background-color: #EDB32B;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+
+
+
+/* Upload Section */
+.upload-section {
+  padding: 20px;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+/* Main Work-in-Progress Image */
+.main-wip img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Recent WIPs Header */
+.recent-wips h2 {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Grid of WIP Images */
+.wip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.wip-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+
+
+/* Styling for disabled links */
+.disabled-link {
+  pointer-events: none; /* Disable clicking */
+  color: gray; /* Optional: change text color to gray */
+  cursor: default; /* Optional: change cursor to default */
+  opacity: 0.5; /* Optional: make it look visually "disabled" */
+}
