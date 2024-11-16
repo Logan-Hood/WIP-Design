@@ -590,3 +590,82 @@ input:checked + .slider::before {
 .no-label {
   right: 12px;
 }
+
+
+
+
+
+
+
+.carousel-container {
+  text-align: center;
+  max-width: 440px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-item.active {
+  display: flex;
+}
+
+.description {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.description h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.description p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.description a {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #EDB32B;
+  text-decoration: none;
+}
+
+.progress-bar {
+  margin-top: 10px;
+  width: 80%;
+}
+
+.carousel-navigation {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-navigation .prev-btn, .carousel-navigation .next-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 20px;
+}

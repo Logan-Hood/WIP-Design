@@ -62,3 +62,36 @@ document.querySelectorAll('.switch input').forEach((toggle) => {
       // You can handle further actions based on the state here
   });
 });
+
+
+
+
+
+const items = document.querySelectorAll('.carousel-item');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+let currentIndex = 0;
+
+function updateCarousel(index) {
+    items.forEach((item, i) => {
+        if (i === index) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
+    });
+}
+
+prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    updateCarousel(currentIndex);
+});
+
+nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % items.length;
+    updateCarousel(currentIndex);
+});
+
+// Initialize the first item as active
+updateCarousel(currentIndex);
