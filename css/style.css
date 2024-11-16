@@ -7,7 +7,6 @@ body, html {
     background-color: #F5F5F5;
     width: 440px;
     height: 956px;
-    overflow: hidden;
 }
 
 /* Style for the login page */
@@ -42,6 +41,7 @@ body, html {
   width: 175px;
   height: 99px;
 }
+
 
 .input-group {
     margin-bottom: 15px;
@@ -279,22 +279,20 @@ input[type="email"], input[type="password"] {
 /* Saved Projects Section */
 .saved-projects {
   padding: 20px;
+  overflow: scroll;
 }
 
 .project {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: #FFFFFF;
-  border: 1px solid #979797;
-  border-radius: 10px;
-  overflow: hidden;
+  border-bottom: 1px solid #979797;
+  border-top: 1px solid #979797;
   margin-bottom: 20px;
 }
 
 .project-image {
-  width: 120px;
-  height: auto;
-  object-fit: cover;
+  width: 500px;
 }
 
 .project-info {
@@ -303,6 +301,7 @@ input[type="email"], input[type="password"] {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 200px;
 }
 
 .project-info h2 {
@@ -316,16 +315,15 @@ input[type="email"], input[type="password"] {
   font-size: 12px;
   color: #707070;
   margin-bottom: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
 .project-stage {
-  width: 30px;
+  width: 50px;
   height: 30px;
+  margin-top: 40px;
 }
 
 .comment-button {
@@ -363,6 +361,7 @@ input[type="email"], input[type="password"] {
   padding: 20px;
   background-color: #000000;
   color: #FFFFFF;
+  overflow: scroll;
 }
 
 /* Main Work-in-Progress Image */
@@ -405,4 +404,173 @@ input[type="email"], input[type="password"] {
   color: gray; /* Optional: change text color to gray */
   cursor: default; /* Optional: change cursor to default */
   opacity: 0.5; /* Optional: make it look visually "disabled" */
+}
+
+
+
+
+
+
+.upload-container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #000;
+}
+
+.upload-container h1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.upload-preview img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.upload-form label {
+  font-size: 12px;
+  color: #000000;
+  text-align: left;
+}
+
+.upload-form input {
+  padding: 10px;
+  font-size: 13px;
+  border: 1px solid #000000;
+  background-color: #F5F5F5;
+  border-radius: 5px;
+}
+
+.toggle-options {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.toggle-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #707070;
+}
+
+.toggle-btn {
+  width: 40px;
+  padding: 5px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+}
+
+.toggle-btn[data-option$="yes"] {
+  background-color: #EDB32B;
+}
+
+.toggle-btn[data-option$="no"] {
+  background-color: #000;
+}
+
+.post-wip-btn {
+  margin-top: 20px;
+  background-color: #000;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+.toggle-switch {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 40px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  border-radius: 20px;
+  transition: background-color 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 32px;
+  width: 32px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #EDB32B;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #EDB32B;
+}
+
+input:checked + .slider::before {
+  transform: translateX(50px);
+  background-color: #000;
+}
+
+.yes-label, .no-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  pointer-events: none;
+}
+
+.yes-label {
+  left: 12px;
+}
+
+.no-label {
+  right: 12px;
 }

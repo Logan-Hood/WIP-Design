@@ -52,3 +52,13 @@ document.querySelectorAll('.profile-overlay a').forEach(link => {
 
 
 
+
+
+
+document.querySelectorAll('.switch input').forEach((toggle) => {
+  toggle.addEventListener('change', (event) => {
+      const isChecked = event.target.checked;
+      console.log(`${event.target.id} is now ${isChecked ? "YES" : "NO"}`);
+      // You can handle further actions based on the state here
+  });
+});
