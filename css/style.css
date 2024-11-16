@@ -7,7 +7,11 @@ body, html {
     background-color: #F5F5F5;
     width: 440px;
     height: 956px;
-    overflow: scroll;
+    overflow: hidden;
+}
+
+.upload-section {
+  overflow: scroll;
 }
 
 /* Style for the login page */
