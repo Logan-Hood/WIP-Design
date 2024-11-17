@@ -125,75 +125,136 @@ input[type="email"], input[type="password"] {
     background-color: #F5F5F5;
   }
   
-  /* General overlay styles */
-
-  /* Overlays */
-  /* Overlays */
-  .menu-overlay, .profile-overlay {
-    display: none;
+/* General overlay styles */
+.menu-overlay,
+.profile-overlay {
+    display: none; /* Hidden by default */
     position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #F5F5F5;
     top: 0;
-    left: 0;
-    z-index: 1000;
+    width: 50%; /* Takes up half the screen width */
+    height: 100%; /* Full height of the screen */
+    background-color: white; /* White background */
+    z-index: 999; /* Above all other content */
     padding: 20px;
-    overflow-y: auto;
-  }
- 
-  .close-overlay {
+    box-sizing: border-box;
+    transform: translateX(-100%); /* Initially off-screen for menu */
+    transition: transform 0.3s ease; /* Smooth slide-in effect */
+}
+
+/* Hamburger menu specific styles */
+.menu-overlay {
+    left: 0; /* Anchored to the left */
+}
+
+/* Profile menu specific styles */
+.profile-overlay {
+    right: 0; /* Anchored to the right */
+    transform: translateX(100%); /* Initially off-screen for profile menu */
+}
+
+/* Active state for sliding in */
+.menu-overlay.active {
+    display: block;
+    transform: translateX(0); /* Slide in to position */
+}
+
+.profile-overlay.active {
+    display: block;
+    transform: translateX(0); /* Slide in to position */
+}
+
+/* Close button */
+.close-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     font-size: 18px;
-    background: none;
-    border: none;
-    color: #000000;
     cursor: pointer;
-    margin-bottom: 20px;
-  }
- 
-  .menu-overlay ul, .profile-overlay ul {
+    color: black;
+}
+
+/* Overlay link styles */
+.menu-overlay a,
+.profile-overlay a {
+    display: block;
+    margin: 15px 0;
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+
+.menu-overlay ul,
+.profile-overlay ul {
     list-style: none;
     padding: 0;
-  }
- 
-  .menu-overlay li, .profile-overlay li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
- 
-  .menu-overlay img, .profile-overlay img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-  }
- 
-  .profile-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
- 
-  .profile-header img {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
-  }
- 
-  .profile-header p {
-    margin: 0;
-    font-size: 13px;
-  }
- 
-  .badge {
-    background-color: #EDB32B;
-    color: #000000;
-    font-size: 10px;
-    padding: 3px 6px;
-    border-radius: 5px;
-    margin-left: 10px;
-  }
+}
+
+/* Profile Overlay - Right */
+.profile-overlay {
+  position: fixed;
+  top: 0;
+  right: -50%; /* Initially hidden */
+  width: 50%; /* Half the screen */
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: right 0.3s ease-in-out; /* Slide in animation */
+}
+
+/* Show Menu Overlay */
+.menu-overlay.active {
+  left: 0; /* Slide in from the left */
+}
+
+/* Show Profile Overlay */
+.profile-overlay.active {
+  right: 0; /* Slide in from the right */
+}
+
+/* Shared Overlay Content */
+.close-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 20px;
+}
+
+ul li {
+  margin: 15px 0;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+ul li a img {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.badge {
+  background-color: #e2a315;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 10px;
+  padding: 2px 8px;
+  margin-left: 10px;
+}
+
 
   
   /* Bottom Navbar */
