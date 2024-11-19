@@ -7,127 +7,156 @@
   <link href="css/style.css" rel="stylesheet" type="text/css">
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="js/index.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #000; /* Ensure background matches design */
+    }
+
+    /* Header with Next Step and Close Icon */
+    .upload-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #000;
+    }
+
+    .upload-header h2 {
+      color: #fff;
+      font-size: 18px;
+      margin: 0;
+      font-weight: normal;
+    }
+
+    .upload-header .close-icon {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .upload-header a {
+      text-decoration: none;
+    }
+
+    .upload-header button {
+      background-color: #EDB32B;
+      border: none;
+      color: #000;
+      padding: 5px 20px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 30px; /* Default for rounded edges */
+      border-top-left-radius: 0; /* 90-degree angle at top-left */
+    }
+
+    /* Main WIP Section */
+    .upload-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .main-wip img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Recent WIPs Section */
+    .recent-wips {
+      padding: 10px;
+    }
+
+    .recent-wips h2 {
+      margin: 0;
+      color: #fff;
+    }
+
+    .wip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+      margin-bottom: 40px; /* Add extra space before bottom navigation */
+    }
+
+    .wip-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    /* Bottom Navigation */
+    .bottom-navbar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px;
+      background-color: #EDB32B;
+    }
+
+    .bottom-navbar a img {
+      width: 30px;
+      height: 30px;
+    }
+
+    /* Spacer between image grid and bottom navigation */
+    .spacer {
+      height: 20px;
+      background-color: #000; /* Match background color for clean negative space */
+    }
+  </style>
 </head>
 <body>
-  <!-- Top Navbar -->
-  <div class="top-navbar">
-    <img src="images/ham1.png" alt="Menu" class="hamburger-menu">
-    <img src="images/logo1.png" alt="Logo" class="logo1">
-    <input type="text" placeholder="Search" class="search-bar">
-    <img src="images/profile2.png" alt="Profile" class="profile-icon">
+  <!-- New Header with Close Icon and Next Step -->
+  <div class="upload-header">
+    <a href="#" class="close-icon">X</a>
+    <h2>NEW WIP</h2>
+    <a href="upload2.html">
+      <button>Next</button>
+    </a>
   </div>
 
-  <!-- Top Navbar Overlays -->
-  <div class="menu-overlay">
-    <button class="close-overlay">X</button>
-    <ul>
-        <li>
-            <a href="explore.html">
-                <img src="images/explore1.png" alt="Explore"> Explore
-            </a>
-        </li>
-        <li>
-          <a href="#" class="disabled-link">
-            <img src="images/connect1.png" alt="Collaborate"> Collab
-          </a>
-        </li>
-        <li>
-          <a href="#" class="disabled-link">
-            <img src="images/connect1.png" alt="Connect"> Connect
-          </a>
-        </li>
-        <li>
-          <a href="#" class="disabled-link">
-            <img src="images/learn1.png" alt="Learn"> Learn
-          </a>        
-        </li>
-    </ul>
-</div>
-
-
-<div class="profile-overlay">
-  <button class="close-overlay">X</button>
-  <div class="profile-header">
-      <img src="images/profile1.png" alt="Profile">
-      <p>Jane Smith</p>
-      <p>@Janesmith</p>
-      <span class="badge">MENTOR</span>
-  </div>
-  <ul>
-      <li>
-          <a href="#" class="disabled-link">
-              <img src="images/inbox1.png" alt="Inbox"> Check Inbox 
-              <span class="badge">3 NEW</span>
-          </a>
-      </li>
-      <li>
-          <a href="#" class="disabled-link">
-              <img src="images/connect1.png" alt="Collaborate"> Collaborate 
-              <span class="badge">10 NEW</span>
-          </a>
-      </li>
-      <li>
-          <a href="#" class="disabled-link">
-              <img src="images/learn1.png" alt="Learn"> Continue learning
-          </a>
-      </li>
-      <li>
-          <a href="explore.html">
-              <img src="images/explore1.png" alt="Explore"> Explore
-          </a>
-      </li>
-      <li>
-          <a href="upload1.html">
-              <img src="images/up2.png" alt="Upload WIP"> Upload WIP
-          </a>
-      </li>
-      <li>
-        <a href="index.html">
-            <img src="images/logout1.png" alt="logout"> Log out
-        </a>
-    </li>
-  </ul>
-</div>
-
-<!-- Content Section -->
-<div class="upload-section">
+  <!-- Content Section -->
+  <div class="upload-section">
     <!-- Large Work-in-Progress (WIP) Image -->
     <div class="main-wip">
-        <img src="images/wip1.png" alt="Main Work in Progress">
+      <img src="images/wip1.png" alt="Main Work in Progress">
     </div>
 
     <!-- Recent WIPs Section -->
     <div class="recent-wips">
-        <h2>Upload your WIP</h2>
-        <div class="wip-grid">
-            <img src="images/wip1.png" alt="WIP 1">
-            <img src="images/wip2.png" alt="WIP 2">
-            <img src="images/wip3.png" alt="WIP 3">
-            <img src="images/wip4.png" alt="WIP 4">
-            <img src="images/wip5.png" alt="WIP 5">
-            <img src="images/wip6.png" alt="WIP 6">
-            <img src="images/wip7.png" alt="WIP 7">
-            <img src="images/wip8.png" alt="WIP 8">
-            <img src="images/wip9.png" alt="WIP 9">
-            <img src="images/wip10.png" alt="WIP 10">
-            <img src="images/wip11.png" alt="WIP 11">
-            <img src="images/wip12.png" alt="WIP 12">
-        </div>
-        <a href="upload2.html">
-        <button class="next-button">Next Step</button>
-      </a>
+      <h2>Recent WIPs</h2>
+      <div class="wip-grid">
+        <img src="images/wip1.png" alt="WIP 1">
+        <img src="images/wip2.png" alt="WIP 2">
+        <img src="images/wip3.png" alt="WIP 3">
+        <img src="images/wip4.png" alt="WIP 4">
+        <img src="images/wip5.png" alt="WIP 5">
+        <img src="images/wip6.png" alt="WIP 6">
+        <img src="images/wip7.png" alt="WIP 7">
+        <img src="images/wip8.png" alt="WIP 8">
+        <img src="images/wip9.png" alt="WIP 9">
+        <img src="images/wip10.png" alt="WIP 10">
+        <img src="images/wip11.png" alt="WIP 11">
+        <img src="images/wip12.png" alt="WIP 12">
+      </div>
     </div>
-</div>
-
-
+    <!-- Spacer for negative space -->
+    <div class="spacer"></div>
+  </div>
 
   <!-- Bottom Navbar -->
   <div class="bottom-navbar">
     <a href="explore.html"><img src="images/explore1.png" alt="Explore"></a>
-    <a href="#"><img src="images/connect1.png" alt="Connect" class="disabled-link"></a>
     <a href="dash.html"><img src="images/dash1.png" alt="Dashboard"></a>
-    <a href="upload1.html"><img src="images/up1.png" alt="Upload"></a>
-    <a href="#"><img src="images/learn1.png" alt="Learn" class="disabled-link"></a>
-  </div>
-</body>
-</html>
+    <a href="upload1.html"><img src

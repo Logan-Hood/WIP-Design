@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=440, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Your WIP</title>
   <link href="css/style.css" rel="stylesheet" type="text/css">
-  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-  <script src="js/index.js"></script>
 </head>
 <body>
   <!-- Top Navbar -->
@@ -88,67 +86,83 @@
     </li>
   </ul>
 </div>
-
-
-
 <!-- Content Section -->
 <div class="carousel-container">
-  <!-- Carousel -->
+    <!-- First Carousel (Images) -->
+  <h1>Flamingo WIP</h1>
   <div class="carousel">
-      <div class="carousel-item active">
-          <img src="images/wip1.png" alt="Work in Progress">
-          <div class="description">
-              <h2>Flamingo WIP</h2>
-              <p>Here’s a peek at my flamingo painting in progress! I’m focusing on capturing the grace and vibrant colors of this beautiful bird, while experimenting with soft, flowing brushstrokes to evoke its elegance. The composition is coming together, but there’s still work to be done on the details and background. Can’t wait to see how it all comes together!</p>
-              <a href="#">View Feedback</a>
-          </div>
-          <img src="images/barstage1.png" alt="Progress Bar" class="progress-bar">
-      </div>
-      <div class="carousel-item">
-          <img src="images/post1.png" alt="Post 1">
-          <div class="description">
-              <h2>Stage 1</h2>
-              <p>This stage focuses on laying the foundational elements, ensuring the overall structure of the composition is in place.</p>
-              <a href="#">View Feedback</a>
-          </div>
-          <img src="images/barstage2.png" alt="Progress Bar" class="progress-bar">
-      </div>
-      <div class="carousel-item">
-          <img src="images/post2.png" alt="Post 2">
-          <div class="description">
-              <h2>Stage 2</h2>
-              <p>Refining details and introducing dynamic color gradients to bring the painting closer to its envisioned finish.</p>
-              <a href="#">View Feedback</a>
-          </div>
-          <img src="images/barstage3.png" alt="Progress Bar" class="progress-bar">
-      </div>
-      <div class="carousel-item">
-          <img src="images/post3.png" alt="Post 3">
-          <div class="description">
-              <h2>Complete</h2>
-              <p>The final piece has come together, showcasing the vibrant elegance of the flamingo with polished details and a balanced composition.</p>
-              <a href="#">View Feedback</a>
-          </div>
-          <img src="images/barstage4.png" alt="Progress Bar" class="progress-bar">
-      </div>
+    <div class="carousel-item"><img src="images/wip1.png" alt="WIP 1"></div>
+    <div class="carousel-item"><img src="images/post1.png" alt="Post 1"></div>
+    <div class="carousel-item"><img src="images/post2.png" alt="Post 2"></div>
+    <div class="carousel-item"><img src="images/post3.png" alt="Post 3"></div>
+  </div>
+  
+</div>
+
+<div class="carousel-container2">
+  <!-- Second Carousel (Paragraphs) -->
+  <h2>About This Stage</h2>
+  <div class="carousel">
+    <div class="carousel-item"><p>This is the description for WIP 1, detailing the creative process and initial stages.</p>
+    </div>
+    <div class="carousel-item"><p>This is the description for WIP 2, detailing the creative process and initial stages.</p></div>
+    <div class="carousel-item"><p>This is the description for WIP 3, detailing the creative process and initial stages.</p></div>
+    <div class="carousel-item"><p>This is the description for WIP 4, detailing the creative process and initial stages.</p></div>
   </div>
 
-  <!-- Navigation Buttons -->
-  <div class="carousel-navigation">
-      <button class="prev-btn">&larr;</button>
-      <button class="next-btn">&rarr;</button>
+<!-- View Feedback Link -->
+<div class="view-feedback">
+  <button class="prev-button">❮</button>
+  <a href="#" id="view-feedback-link">View Feedback</a>
+  <button class="next-button2">❯</button>
+</div>
+
+<!-- Feedback Overlay -->
+<div id="feedback-overlay" class="overlay">
+  <div class="overlay-content">
+    <button class="close-button" id="close-feedback">X</button>
+    <div class="carousel">
+      <div class="carousel-item">
+        <p><strong>@john.smith</strong> I really love the sense of movement in the flamingo’s posture—there’s a nice flow to the way it stands. The colors are vibrant and really capture the bird’s elegance.</p>
+        <p><strong>Suggestion:</strong> I think the background could use a bit more depth to make the flamingo pop even more. Maybe try adding subtle gradients or soft shadows to ground the figure. Also, consider softening the edges around the feathers to give them more texture and a more natural look.</p>
+      </div>
+      <div class="carousel-item">
+        <p><strong>@artlover87</strong> The choice of colors here is brilliant! It really gives off a tropical vibe. Maybe consider adding a subtle gradient in the background to amplify the tropical theme.</p>
+        <p><strong>Suggestion:</strong> Try adding more detail to the legs to make them stand out against the background.</p>
+      </div>
+      <div class="carousel-item">
+        <p><strong>@designpro</strong> Your brushwork on the feathers is fantastic. It gives the bird a lot of personality and realism.</p>
+        <p><strong>Suggestion:</strong> Perhaps experiment with a softer outline for the body to make it blend seamlessly with the background.</p>
+      </div>
+      <div class="carousel-item">
+        <p><strong>@birdenthusiast</strong> The way you've captured the flamingo’s elegance is stunning. The pose is dynamic and draws attention immediately.</p>
+        <p><strong>Suggestion:</strong> Consider adding a hint of reflection in the water to enhance the composition.</p>
+      </div>
+    </div>
+    <button class="prev-button3" id="feedback-prev">❮</button>
+    <button class="next-button3" id="feedback-next">❯</button>
   </div>
 </div>
 
 
 
+  <!-- Third Carousel (Stages) -->
+<h2>Stage</h2>
+<div class="carousel">
+  <div class="carousel-item"><img src="images/barstage1.png" alt="Stage 1"></div>
+  <div class="carousel-item"><img src="images/barstage2.png" alt="Stage 2"></div>
+  <div class="carousel-item"><img src="images/barstage3.png" alt="Stage 3"></div>
+  <div class="carousel-item"><img src="images/barstage4.png" alt="Stage 4"></div>
+</div>
+
+
   <!-- Bottom Navbar -->
   <div class="bottom-navbar">
     <a href="explore.html"><img src="images/explore1.png" alt="Explore"></a>
-    <a href="#"><img src="images/connect1.png" alt="Connect" class="disabled-link"></a>
     <a href="dash.html"><img src="images/dash1.png" alt="Dashboard"></a>
     <a href="upload1.html"><img src="images/up1.png" alt="Upload"></a>
-    <a href="#"><img src="images/learn1.png" alt="Learn" class="disabled-link"></a>
   </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="js/index.js"></script>
 </html>
