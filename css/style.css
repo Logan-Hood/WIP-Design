@@ -645,29 +645,55 @@ input:checked + .slider::before {
 
 
 
+/* Carousel Container */
 .carousel-container {
-  text-align: center;
+  position: relative;
+  width: 100%;
   max-width: 440px;
   margin: 0 auto;
   overflow: hidden;
-  position: relative;
+  text-align: center;
+  background-color: #FFFFFF;
+  border-bottom: 3px solid #EDB32B;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
+.carousel-container2 {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  overflow: hidden;
+  text-align: start;
+  background-color: #FFFFFF;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+/* Carousel */
 .carousel {
   display: flex;
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
+/* Carousel Items */
 .carousel-item {
   min-width: 100%;
   box-sizing: border-box;
-  display: none;
-  flex-direction: column;
-  align-items: center;
 }
 
-.carousel-item.active {
-  display: flex;
+
+/* Images */
+.carousel-item img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.carousel-item p {
+  margin: 20px;
 }
 
 .description {
@@ -716,4 +742,114 @@ input:checked + .slider::before {
   height: 40px;
   cursor: pointer;
   font-size: 20px;
+}
+
+
+/* Buttons for Navigation */
+.prev-button, .next-button2 {
+  position: absolute;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev-button {
+  left: 10px;
+  background-color: #EDB32B;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.next-button2 {
+  right: 10px;
+  background-color: #EDB32B;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.next-button {
+  align-self: flex-start;
+  background-color: #EDB32B;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+
+/* View Feedback Link */
+.view-feedback {
+  text-align: center;
+  margin: 20px 0; /* Add some spacing above and below */
+}
+
+.view-feedback a {
+  text-decoration: none;
+  color: #EDB32B; /* Gold color */
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #EDB32B;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.view-feedback a:hover {
+  background-color: #EDB32B;
+  color: #FFFFFF; /* White text on hover */
+}
+
+
+/* Carousel Styling for Feedback Overlay */
+.overlay-content .carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+.overlay-content .carousel-item {
+  display: none;
+  text-align: left;
+}
+
+.overlay-content .carousel-item.active {
+  display: block;
+}
+
+.overlay-content .prev-button3,
+.overlay-content .next-button3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #000;
+}
+
+.overlay-content .prev-button3 {
+  left: 10px;
+}
+
+.overlay-content .next-button3 {
+  right: 10px;
 }
