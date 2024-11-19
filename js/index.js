@@ -71,3 +71,56 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCarousel();
   });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const feedbackLink = document.getElementById("view-feedback-link");
+  const feedbackOverlay = document.getElementById("feedback-overlay");
+  const closeFeedback = document.getElementById("close-feedback");
+  const feedbackCarouselItems = feedbackOverlay.querySelectorAll(".carousel-item");
+  const feedbackPrevButton = document.getElementById("feedback-prev");
+  const feedbackNextButton = document.getElementById("feedback-next");
+
+  let feedbackCurrentIndex = 0;
+
+  // Function to update carousel visibility
+  function updateFeedbackCarousel() {
+    feedbackCarouselItems.forEach((item, index) => {
+      item.classList.toggle("active", index === feedbackCurrentIndex);
+    });
+  }
+
+  // Show overlay when link is clicked
+  feedbackLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    feedbackOverlay.style.display = "block";
+    updateFeedbackCarousel();
+  });
+
+  // Hide overlay when close button is clicked
+  closeFeedback.addEventListener("click", () => {
+    feedbackOverlay.style.display = "none";
+  });
+
+
+  // Navigate to the previous comment
+  feedbackPrevButton.addEventListener("click", () => {
+    feedbackCurrentIndex =
+      (feedbackCurrentIndex - 1 + feedbackCarouselItems.length) % feedbackCarouselItems.length;
+    updateFeedbackCarousel();
+  });
+
+  // Navigate to the next comment
+  feedbackNextButton.addEventListener("click", () => {
+    feedbackCurrentIndex = (feedbackCurrentIndex + 1) % feedbackCarouselItems.length;
+    updateFeedbackCarousel();
+  });
+
+  // Optional: Hide overlay when clicking outside the content
+  feedbackOverlay.addEventListener("click", (event) => {
+    if (event.target === feedbackOverlay) {
+      feedbackOverlay.style.display = "none";
+    }
+  });
+});
