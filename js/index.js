@@ -47,31 +47,27 @@ document.querySelectorAll('.switch input').forEach((toggle) => {
 
 
 
-const items = document.querySelectorAll('.carousel-item');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelector(".carousel");
+  const items = document.querySelectorAll(".carousel-item");
+  const prevButton = document.querySelector(".prev-button");
+  const nextButton = document.querySelector(".next-button2");
+  
 
-let currentIndex = 0;
+  let currentIndex = 0;
 
-function updateCarousel(index) {
-    items.forEach((item, i) => {
-        if (i === index) {
-            item.classList.add('active');
-        } else {
-            item.classList.remove('active');
-        }
-    });
-}
+  function updateCarousel() {
+    const offset = -currentIndex * 100;
+    carousel.style.transform = `translateX(${offset}%)`;
+  }
 
-prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
-    updateCarousel(currentIndex);
+  prevButton.addEventListener("click", () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
+    updateCarousel();
+  });
+
+  nextButton.addEventListener("click", () => {
+    currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
+    updateCarousel();
+  });
 });
-
-nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % items.length;
-    updateCarousel(currentIndex);
-});
-
-// Initialize the first item as active
-updateCarousel(currentIndex);
