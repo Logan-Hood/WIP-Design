@@ -259,7 +259,7 @@ ul li a img {
   
   /* Bottom Navbar */
   .bottom-navbar {
-    position: fixed;
+    position: sticky;
     bottom: 0;
     width: 440px;
     display: flex;
