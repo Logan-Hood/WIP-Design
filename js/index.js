@@ -1,11 +1,19 @@
 // index.js
 
 function login() {
-    // Simulate login by navigating to the dashboard page
-    window.location.href = "dash.html";
+  // Simulate login by navigating to the dashboard page
+  window.location.href = "dash.html";
 }
 
 
+
+
+
+
+
+
+
+// hamburger menu and profile menu overlay functions
 
 $(document).ready(function () {
   // Open the hamburger menu overlay
@@ -35,44 +43,70 @@ $(document).ready(function () {
 
 
 
-document.querySelectorAll('.switch input').forEach((toggle) => {
-  toggle.addEventListener('change', (event) => {
-      const isChecked = event.target.checked;
-      console.log(`${event.target.id} is now ${isChecked ? "YES" : "NO"}`);
-      // You can handle further actions based on the state here
-  });
-});
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  Carousels for post.html
+//  Carousels for first carousel
 document.addEventListener("DOMContentLoaded", () => {
   const carousel = document.querySelector(".carousel");
   const items = document.querySelectorAll(".carousel-item");
   const prevButton = document.querySelector(".prev-button");
-  const nextButton = document.querySelector(".next-button2");
+  const nextButton = document.querySelector(".next-button");
   
-
   let currentIndex = 0;
 
   function updateCarousel() {
-    const offset = -currentIndex * 100;
+    const offset = -currentIndex * 100; // Move to the current slide
     carousel.style.transform = `translateX(${offset}%)`;
+
+    // Disable buttons if we're at the start or end
+    prevButton.disabled = (currentIndex === 0);
+    nextButton.disabled = (currentIndex === 3);
   }
 
   prevButton.addEventListener("click", () => {
-    currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
-    updateCarousel();
+    if (currentIndex > 0) { // Only move if not at the first item
+      currentIndex -= 1;
+      updateCarousel();
+    }
   });
 
   nextButton.addEventListener("click", () => {
-    currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
-    updateCarousel();
+    if (currentIndex < items.length - 1) { // Only move if not at the last item
+      currentIndex += 1;
+      updateCarousel();
+    }
   });
+
+  // Initialize the carousel position and button state
+  updateCarousel();
 });
 
 
+
+
+
+
+
+
+
+//  Carousels for comment carousel
 
 document.addEventListener("DOMContentLoaded", () => {
   const feedbackLink = document.getElementById("view-feedback-link");
@@ -123,4 +157,57 @@ document.addEventListener("DOMContentLoaded", () => {
       feedbackOverlay.style.display = "none";
     }
   });
+});
+
+
+
+
+
+
+
+
+
+// Progress Bar Functionality
+
+// JavaScript for Progress Bar Functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const progressCircles = document.querySelectorAll(".progress-circle");
+  const progressLine = document.querySelector(".progress-line:before");
+  const prevButton = document.querySelector(".prev-button");
+  const nextButton = document.querySelector(".next-button");
+
+  let currentStep = 0; // Index of the active progress step
+
+  // Update progress bar visuals
+  function updateProgressBar() {
+      progressCircles.forEach((circle, index) => {
+          if (index <= currentStep) {
+              circle.classList.add("active");
+          } else {
+              circle.classList.remove("active");
+          }
+      });
+
+      // Calculate and set the progress line width
+      const percentage = (currentStep / (progressCircles.length - 1)) * 100;
+      progressLine.style.width = `${percentage}%`;
+  }
+
+  // Event listeners for buttons
+  prevButton.addEventListener("click", function () {
+      if (currentStep > 0) {
+          currentStep--;
+          updateProgressBar();
+      }
+  });
+
+  nextButton.addEventListener("click", function () {
+      if (currentStep < progressCircles.length - 1) {
+          currentStep++;
+          updateProgressBar();
+      }
+  });
+
+  // Initialize progress bar
+  updateProgressBar();
 });
