@@ -515,14 +515,22 @@ input[type="email"], input[type="password"] {
     font-size: 12px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 40px;
-    margin-bottom: 10px;
     width: 25%;
   }
 
+.action-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
 
-
-
+.action-bar img {
+  height: 15px;
+  width: 15px;
+}
 
 
 
@@ -975,6 +983,8 @@ h1 {
   border-top-left-radius: 0; /* 90-degree angle at top-left */
   z-index: 2;
   transition: background-color 0.3s ease, color 0.3s ease;
+  margin-bottom: 48px;
+  margin-top: 48px;
 }
 
 

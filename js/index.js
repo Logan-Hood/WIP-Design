@@ -53,6 +53,24 @@ $(document).ready(function () {
 
 
 
+// Explore page button to post.html
+
+document.addEventListener("DOMContentLoaded", () => {
+  const viewButton = document.querySelector(".view-button2");
+
+  viewButton.addEventListener("click", () => {
+    window.location.href = "post.html"; // Redirects to post.html
+  });
+});
+
+
+
+
+
+
+
+
+
 
 
 
